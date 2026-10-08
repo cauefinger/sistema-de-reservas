@@ -5,6 +5,6 @@ auth_router = APIRouter(
     tags="Autenticação"
 )
 
-@auth_router("/")
+@auth_router.get("/")
 async def mensagem_rota():
     return {"mensagem":"Você entrou na rota de autenticação"}
