@@ -1,4 +1,4 @@
-from fastapi import FastAPI, APIRouter
+from fastapi import APIRouter
 
 auth_router = APIRouter(
     prefix="/autenticacao",
