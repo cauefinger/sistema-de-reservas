@@ -1,2 +1,6 @@
 O Sistema de Reservas é uma aplicação desenvolvida para facilitar o gerenciamento de recursos, horários, valores e disponibilidade, permitindo organizar reservas de forma prática e segura, 
 evitando conflitos de horários.
+
+
+=========== TAREFAS =============
+[ ] Trocar usuário e senha docker
