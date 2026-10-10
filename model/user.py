@@ -11,3 +11,4 @@ class Usuario(Base):
     email = Column(String, nullable=False, unique=True)  
     senha = Column(String, nullable=False)
     ativo = Column(Boolean, nullable=True)
+    admin = Column(Boolean, default=False)
