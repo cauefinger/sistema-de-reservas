@@ -4,4 +4,4 @@ evitando conflitos de horários.
 
 =========== TAREFAS =============
 
-[ ] Trocar usuário e senha docker
+[ ] Trocar usuário e senha docker   
