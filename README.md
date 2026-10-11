@@ -5,3 +5,4 @@ evitando conflitos de horários.
 =========== TAREFAS =============
 
 [ ] Trocar usuário e senha docker   
+[ ] Criar tabela locacao
