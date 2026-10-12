@@ -16,4 +16,3 @@ class Locacao(Base):
     
 
 
-# TODO: ARRUMAR DATE TIME DE INICIO E FIM
