@@ -1,7 +1,7 @@
 from fastapi import APIRouter
 
 autenticacao = APIRouter(
-    prefix="/",
+    prefix="/autenticacao",
     tags=["Autenticação"]
 )
 

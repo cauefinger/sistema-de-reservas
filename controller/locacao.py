@@ -2,7 +2,7 @@ from fastapi import APIRouter
 
 
 locacao = APIRouter (
-    prefix="/",
+    prefix="/locacao",
     tags=["Locação"]
 )   
 

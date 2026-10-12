@@ -1,12 +1,12 @@
 from fastapi import FastAPI
-from controller.autenticacao import auth_router
+from controller.autenticacao import autenticacao
 from database.database import engine, Base
 from model.user import Usuario
 
 
 app = FastAPI()
 
-app.include_router(auth_router) 
+app.include_router(autenticacao) 
 
 Base.metadata.create_all(bind=engine)
 

@@ -1,7 +1,7 @@
 from fastapi import APIRouter
 
 recurso = APIRouter(
-    prefix="/",
+    prefix="/recurso",
     tags=["Recurso"]
 )
 
