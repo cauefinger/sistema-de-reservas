@@ -4,7 +4,7 @@ from model.enums import enum
 
 class Recurso(Base):
 
-    __tablename__ = "Recurso"
+    __tablename__ = "recursos"
 
     id = Column(Integer, primary_key=True)
     nome = Column(String, nullable=False)
