@@ -1,10 +1,10 @@
 from fastapi import APIRouter
 
-auth_router = APIRouter(
-    prefix="/autenticacao",
+autenticacao = APIRouter(
+    prefix="/",
     tags=["Autenticação"]
 )
 
-@auth_router.get("/")
+@autenticacao.get("/")
 async def mensagem_rota():
-    return {"mensagem":"Você entrou na rota de autenticação"}
+    return {"mensagem": "Você entrou na rota de autenticação"}

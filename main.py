@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from controller.auth_router import auth_router
+from controller.autenticacao import auth_router
 from database.database import engine, Base
 from model.user import Usuario
 
