@@ -14,4 +14,8 @@ class Recurso(str, Enum):
     CONSULTORIO = "CONSULTORIO" 
     ESTUDIO = "ESTUDIO" 
     SALA_DE_AULA =  "SALA_DE_AULA"
-    
+
+class Status(str, Enum):
+
+    DISPONIVEL = "DISPONIVEL"
+    INDISPONIVEL = "INDISPONIVEL"
