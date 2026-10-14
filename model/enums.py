@@ -1,8 +1,7 @@
-from sqlalchemy import Enum
 import enum
 
 
-class Recurso(str, Enum):
+class TipoRecurso(str, enum.Enum):
 
     QUADRA = "QUADRA"
     SALA = "SALA"
@@ -15,7 +14,7 @@ class Recurso(str, Enum):
     ESTUDIO = "ESTUDIO" 
     SALA_DE_AULA =  "SALA_DE_AULA"
 
-class Status(str, Enum):
+class Status(str, enum.Enum):
 
     DISPONIVEL = "DISPONIVEL"
     INDISPONIVEL = "INDISPONIVEL"
