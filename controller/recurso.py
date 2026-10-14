@@ -7,4 +7,4 @@ recurso = APIRouter(
 
 @recurso.get("/")
 async def mensagem():
-    return {"mensagem":"Você entrou na rota de recursos!"}
+    return {"mensagem":"Os recursos disponíveis atualmente são: "}
