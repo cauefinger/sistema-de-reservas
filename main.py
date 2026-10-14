@@ -3,7 +3,9 @@ from controller.autenticacao import autenticacao
 from controller.locacao import locacao
 from controller.recurso import recurso
 from database.database import engine, Base
-
+from model.locacao import Locacao
+from model.user import Usuario
+from model.recurso import Recurso
 
 app = FastAPI()
 
