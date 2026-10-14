@@ -6,4 +6,4 @@ evitando conflitos de horários.
 
 [ ] Trocar usuário e senha docker   
 [OK] Criar tabela locacao
-[ ]
+[ ] Fazer o GET da rota de locações
