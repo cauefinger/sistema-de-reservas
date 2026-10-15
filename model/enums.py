@@ -15,5 +15,6 @@ class TipoRecurso(str, Enum):
 
 class Status(str, Enum):
 
-    DISPONIVEL = "DISPONIVEL"
-    INDISPONIVEL = "INDISPONIVEL"
+    PENDENTE = "PENDENTE"
+    CONFIRMADA = "CONFIRMADA"
+    CANCELADA = "CANCELADA"
