@@ -1,7 +1,6 @@
-import enum
+from enum import Enum
 
-
-class TipoRecurso(str, enum.Enum):
+class TipoRecurso(str, Enum):
 
     QUADRA = "QUADRA"
     SALA = "SALA"
@@ -14,7 +13,7 @@ class TipoRecurso(str, enum.Enum):
     ESTUDIO = "ESTUDIO" 
     SALA_DE_AULA =  "SALA_DE_AULA"
 
-class Status(str, enum.Enum):
+class Status(str, Enum):
 
     DISPONIVEL = "DISPONIVEL"
     INDISPONIVEL = "INDISPONIVEL"
