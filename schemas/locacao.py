@@ -1,15 +1,16 @@
 from pydantic import BaseModel, ConfigDict
-from sqlalchemy import DateTime, DECIMAL
+from decimal import Decimal
 from model.enums import Status
+from datetime import datetime
 
 class LocacaoGet(BaseModel):
 
     id: int
     usuario_id: int
     recurso_id: int
-    data_inicio: DateTime
-    data_final: DateTime
-    valor_total: DECIMAL
+    data_inicio: datetime
+    data_final: datetime
+    valor_total: Decimal
     status: Status
 
     model_config = ConfigDict(from_attributes=True)
