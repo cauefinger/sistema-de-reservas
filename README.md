@@ -12,3 +12,6 @@ evitando conflitos de horários.
 
 
 GET DE CONTROLLER LOCACAO E GET DE CONTROLLER RECURSO FEITO, PROXIMO PASSO FAZER POST?
+
+[ ] Mover docker compose pro .env
+[ ] Corrigir estrutura do locacao

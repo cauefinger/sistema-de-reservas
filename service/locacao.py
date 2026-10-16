@@ -12,3 +12,4 @@ def adicionar_locacao(db: Session, dados: LocacaoCreateSchemas):
     db.refresh(novo)
     return novo
 
+    
