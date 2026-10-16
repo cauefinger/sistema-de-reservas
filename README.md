@@ -4,8 +4,11 @@ evitando conflitos de horários.
 
 =========== TAREFAS =============
 
-[ ] Trocar usuário e senha docker   
 [OK] Criar tabela locacao
 [OK] Fazer o GET da rota de locações
 [OK] Passar a lógica que está no controller de recurso para service
 [OK] Passar a lógica que está no controller de locacao para service
+
+
+
+GET DE CONTROLLER LOCACAO E GET DE CONTROLLER RECURSO FEITO, PROXIMO PASSO FAZER POST?
