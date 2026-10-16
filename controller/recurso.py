@@ -1,10 +1,9 @@
 from fastapi import APIRouter, Depends
-from schemas.recurso import RecursoGet
-from sqlalchemy.orm import Session  
-from depends import get_db
-from model.recurso import Recurso
+from sqlalchemy.orm import Session
 from typing import List
-
+from depends import get_db
+from schemas.recurso import RecursoGet
+from service.recurso import listar_recursos
 
 recurso = APIRouter(
     prefix="/recurso",
@@ -12,5 +11,5 @@ recurso = APIRouter(
 )
 
 @recurso.get("/", response_model=List[RecursoGet])
-def listar_recursos(db: Session = Depends(get_db)):
-    return db.query(Recurso).all()  
+def get_recursos(db: Session = Depends(get_db)):
+    return listar_recursos(db)
