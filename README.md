@@ -7,5 +7,5 @@ evitando conflitos de horários.
 [ ] Trocar usuário e senha docker   
 [OK] Criar tabela locacao
 [OK] Fazer o GET da rota de locações
-[ ] Passar a lógica que está no controller de recurso para service
-[ ] Passar a lógica que está no controller de locacao para service
+[OK] Passar a lógica que está no controller de recurso para service
+[OK] Passar a lógica que está no controller de locacao para service
