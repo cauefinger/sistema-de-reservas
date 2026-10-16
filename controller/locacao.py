@@ -3,7 +3,7 @@ from typing import List
 from schemas.locacao import LocacaoGet
 from depends import get_db
 from sqlalchemy.orm import Session  
-from model.locacao import Locacao
+from service.locacao import listar_locacao
 
 locacao = APIRouter (
     prefix="/locacao",
@@ -11,5 +11,5 @@ locacao = APIRouter (
 )   
 
 @locacao.get("/", response_model=List[LocacaoGet])
-async def mensagem_rota(db: Session = Depends(get_db)):
-    return db.query(Locacao).all()
+def get_locacao(db: Session = Depends(get_db)):
+    return listar_locacao(db)
