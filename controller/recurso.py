@@ -15,6 +15,6 @@ def get_recursos(db: Session = Depends(get_db)):
     return listar_recursos(db)
 
 
-@recurso.post("/", response_model=RecursoCreateSchema, status_code=201)
+@recurso.post("/", response_model=RecursoGet, status_code=201)
 def post_recursos(dados: RecursoCreateSchema, db: Session = Depends(get_db)):
     return cadastrar_recurso(db, dados)
