@@ -14,4 +14,5 @@ evitando conflitos de horários.
 GET DE CONTROLLER LOCACAO E GET DE CONTROLLER RECURSO FEITO, PROXIMO PASSO FAZER POST?
 
 [ ] Mover docker compose pro .env
-[ ] Corrigir estrutura do locacao
+[OK] Corrigir estrutura do locacao
+[ ] Adicionar a lógica de valores, considerando os dias do recurso alocado e o proprio valor do recurso, com timedelta e timezone no service de locacao
