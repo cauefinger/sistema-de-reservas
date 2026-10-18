@@ -14,6 +14,8 @@ locacao = APIRouter (
 def get_locacao(db: Session = Depends(get_db)):
     return listar_locacao(db)
 
+
+
 @locacao.post("/", response_model=LocacaoGetSchemas, status_code=201)
-def post_locacao(dados: LocacaoCreateSchemas ,db:Session = Depends(get_db)):
+def post_locacao(dados: LocacaoCreateSchemas , db:Session = Depends(get_db)):
     return adicionar_locacao(db, dados)

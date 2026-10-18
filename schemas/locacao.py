@@ -22,3 +22,7 @@ class LocacaoCreateSchemas(BaseModel):
     recurso_id: int
     data_inicio: datetime
     data_final: datetime
+    valor_total: Decimal
+    status: Status
+
+    model_config = ConfigDict(from_attributes=True)
