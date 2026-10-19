@@ -3,8 +3,8 @@ from model.locacao import Locacao
 from schemas.locacao import LocacaoCreateSchemas
 from fastapi import HTTPException
 from model.recurso import Recurso
-from schemas.recurso import RecursoGet
-
+from decimal import Decimal
+from model.enums import Status
 
 def listar_locacao(db: Session):
     return db.query(Locacao).all()
@@ -30,10 +30,10 @@ def adicionar_locacao(db: Session, dados: LocacaoCreateSchemas):
 
     horas = (dados.data_final - dados.data_inicio).total_seconds() / 3600
 
-    valor_total = (horas * RecursoGet.valor_hora)
+    valor_total = (Decimal(str(horas)) * recurso.valor_hora)
 
 
-    novo = Locacao(**dados.model_dump())
+    novo = Locacao(**dados.model_dump(), valor_total=valor_total, status=Status.PENDENTE)
 
     db.add(novo)
     db.commit()
