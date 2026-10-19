@@ -2,6 +2,7 @@ from fastapi import APIRouter, Depends
 from sqlalchemy.orm import Session
 from schemas.usuario import UsuarioPostSchemas
 from depends import get_db
+from service.usuarios import cadastrar
 
 autenticacao = APIRouter(
     prefix="/autenticacao",
@@ -15,4 +16,4 @@ async def mensagem_rota():
 
 @autenticacao.post("/", response_model=UsuarioPostSchemas, status_code=201)
 def cadastrar_usuario(dados: UsuarioPostSchemas, db: Session = Depends(get_db)):
-    return
+    return cadastrar

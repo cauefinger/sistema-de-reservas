@@ -34,7 +34,6 @@ def adicionar_locacao(db: Session, dados: LocacaoCreateSchemas):
 
     valor_total = (Decimal(str(horas)) * recurso.valor_hora)
 
-    
    
     conflito = db.query(Locacao).filter(
         Locacao.recurso_id == dados.recurso_id,
