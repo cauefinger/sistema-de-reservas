@@ -15,4 +15,6 @@ GET DE CONTROLLER LOCACAO E GET DE CONTROLLER RECURSO FEITO, PROXIMO PASSO FAZER
 
 [ ] Mover docker compose pro .env
 [OK] Corrigir estrutura do locacao
-[ ] Adicionar a lógica de valores, considerando os dias do recurso alocado e o proprio valor do recurso, com timedelta e timezone no service de locacao
+[OK] Adicionar a lógica de valores, considerando os dias do recurso alocado e o proprio valor do recurso, com timedelta e timezone no service de locacao
+[ ] Rota de criar usuário
+[ ]Executar testes de rota já com o usuário
