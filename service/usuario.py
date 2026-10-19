@@ -1,7 +1,6 @@
 from model.user import Usuario
 from schemas.usuario import UsuarioPostSchemas
 from sqlalchemy.orm import Session
-from controller.autenticacao import UsuarioPostSchemas
 from fastapi import HTTPException
 
 
