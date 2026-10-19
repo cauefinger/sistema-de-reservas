@@ -3,6 +3,7 @@ from model.locacao import Locacao
 from schemas.locacao import LocacaoCreateSchemas
 from fastapi import HTTPException
 from model.recurso import Recurso
+from schemas.recurso import RecursoGet
 
 
 def listar_locacao(db: Session):
@@ -18,13 +19,19 @@ def adicionar_locacao(db: Session, dados: LocacaoCreateSchemas):
     recurso = db.get(Recurso, dados.recurso_id)
 
     if not recurso:
-        HTTPException(status_code=404, detail="Recurso não encontrado.")
+        raise HTTPException(status_code=404, detail="Recurso não encontrado.")
 
     if not recurso.ativo:
-        HTTPException(status_code=400, detail="Recurso inativo.")
+        raise HTTPException(status_code=400, detail="Recurso inativo.")
 
     if recurso.valor_hora is None:
-        HTTPException(status_code=400, detail="Recurso sem o valor por hora defenido.")
+        raise HTTPException(status_code=400, detail="Recurso sem o valor por hora defenido.")
+
+
+    horas = (dados.data_final - dados.data_inicio).total_seconds() / 3600
+
+    valor_total = (horas * RecursoGet.valor_hora)
+
 
     novo = Locacao(**dados.model_dump())
 
