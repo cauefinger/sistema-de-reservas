@@ -18,6 +18,16 @@ def adicionar_locacao(db: Session, dados: LocacaoCreateSchemas):
 
     recurso = db.get(Recurso, dados.recurso_id)
 
+    conflito = db.query(Locacao).filter(
+        Locacao.recurso_id == dados.recurso_id,
+        Locacao.status != Status.CANCELADA,
+        Locacao.data_inicio < dados.data_final,
+        Locacao.data_final > dados.data_inicio,
+    ).first()
+
+    if conflito:
+        raise HTTPException(status_code=409, detail="Já existe uma locação nesse período.")
+
     if not recurso:
         raise HTTPException(status_code=404, detail="Recurso não encontrado.")
 
@@ -25,7 +35,7 @@ def adicionar_locacao(db: Session, dados: LocacaoCreateSchemas):
         raise HTTPException(status_code=400, detail="Recurso inativo.")
 
     if recurso.valor_hora is None:
-        raise HTTPException(status_code=400, detail="Recurso sem o valor por hora defenido.")
+        raise HTTPException(status_code=400, detail="Recurso sem o valor por hora definido.")
 
 
     horas = (dados.data_final - dados.data_inicio).total_seconds() / 3600
