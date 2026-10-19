@@ -10,3 +10,12 @@ class UsuarioPostSchemas(BaseModel):
     admin: bool
 
     model_config = ConfigDict(from_attributes=True)
+
+    class UsuarioResponseSchemas(BaseModel):
+
+    nome: str
+    email: str
+    ativo: bool
+    admin: bool
+
+    model_config = ConfigDict(from_attributes=True)

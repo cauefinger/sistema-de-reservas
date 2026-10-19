@@ -5,8 +5,9 @@ from controller.autenticacao import UsuarioPostSchemas
 from fastapi import HTTPException
 from pydantic import BaseModel
 
-def cadastrar (db: Usuario, dados:UsuarioPostSchemas):
 
+
+def cadastrar (db: Usuario, dados:UsuarioPostSchemas):
 
     novo_usuario = db.query(Usuario).filter(Usuario.email == dados.Usuario).first()
 

@@ -16,4 +16,4 @@ async def mensagem_rota():
 
 @autenticacao.post("/", response_model=UsuarioPostSchemas, status_code=201)
 def cadastrar_usuario(dados: UsuarioPostSchemas, db: Session = Depends(get_db)):
-    return cadastrar
+    return cadastrar(db, dados)
