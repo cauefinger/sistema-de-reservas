@@ -8,3 +8,8 @@ autenticacao = APIRouter(
 @autenticacao.get("/")
 async def mensagem_rota():
     return {"mensagem": "Você entrou na rota de autenticação"}
+
+
+@autenticacao.poss("/")
+def cadastrar_usuario():
+    
