@@ -11,8 +11,10 @@ class UsuarioPostSchemas(BaseModel):
 
     model_config = ConfigDict(from_attributes=True)
 
-    class UsuarioResponseSchemas(BaseModel):
 
+class UsuarioResponseSchemas(BaseModel):
+
+    id: int
     nome: str
     email: str
     ativo: bool
