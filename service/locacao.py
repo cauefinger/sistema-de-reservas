@@ -18,15 +18,7 @@ def adicionar_locacao(db: Session, dados: LocacaoCreateSchemas):
 
     recurso = db.get(Recurso, dados.recurso_id)
 
-    conflito = db.query(Locacao).filter(
-        Locacao.recurso_id == dados.recurso_id,
-        Locacao.status != Status.CANCELADA,
-        Locacao.data_inicio < dados.data_final,
-        Locacao.data_final > dados.data_inicio,
-    ).first()
 
-    if conflito:
-        raise HTTPException(status_code=409, detail="Já existe uma locação nesse período.")
 
     if not recurso:
         raise HTTPException(status_code=404, detail="Recurso não encontrado.")
@@ -42,6 +34,17 @@ def adicionar_locacao(db: Session, dados: LocacaoCreateSchemas):
 
     valor_total = (Decimal(str(horas)) * recurso.valor_hora)
 
+    
+   
+    conflito = db.query(Locacao).filter(
+        Locacao.recurso_id == dados.recurso_id,
+        Locacao.status != Status.CANCELADA,
+        Locacao.data_inicio < dados.data_final,
+        Locacao.data_final > dados.data_inicio,
+    ).first()
+
+    if conflito:
+        raise HTTPException(status_code=409, detail="Já existe uma locação nesse período.")
 
     novo = Locacao(**dados.model_dump(), valor_total=valor_total, status=Status.PENDENTE)
 
