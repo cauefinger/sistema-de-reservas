@@ -1,7 +1,7 @@
 from pydantic import BaseModel, ConfigDict
 
 
-class UsuarioPostSchemas(BaseModel):
+class UsuarioPostSchemas(BaseModel): # o que a API espera receber do usuário
 
     nome: str
     email: str
@@ -12,7 +12,7 @@ class UsuarioPostSchemas(BaseModel):
     model_config = ConfigDict(from_attributes=True)
 
 
-class UsuarioResponseSchemas(BaseModel):
+class UsuarioResponseSchemas(BaseModel): # parâmetro que a API deve devolver ao usuário, usando o response model para validar e filtrar.    
 
     id: int
     nome: str
