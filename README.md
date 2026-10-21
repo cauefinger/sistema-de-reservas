@@ -16,8 +16,9 @@ GET DE CONTROLLER LOCACAO E GET DE CONTROLLER RECURSO FEITO, PROXIMO PASSO FAZER
 [ ] Mover docker compose pro .env, criando git ignore e .env de fato
 [OK] Corrigir estrutura do locacao
 [OK] Adicionar a lógica de valores, considerando os dias do recurso alocado e o proprio valor do recurso, com timedelta e timezone no service de locacao
-[ ] Rota de criar usuário
-[ ] Executar testes de rota já com o usuário
+[OK] Rota de criar usuário
+[OK] Executar testes de rota já com o usuário
 [OK] Validar rota de usuarios (controller e service)
 [OK] Fazer HASH
 [ ] Em um melhor momento, adicionar token e refresh token, depois de executar testes com usuário e hash.
+[ ] Melhorar status da locação
