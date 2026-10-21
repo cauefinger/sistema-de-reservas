@@ -21,3 +21,9 @@ class UsuarioResponseSchemas(BaseModel): # parâmetro que a API deve devolver ao
     admin: bool
 
     model_config = ConfigDict(from_attributes=True)
+
+class LoginSchema(BaseModel):
+
+    nome: str
+    email: str
+    senha: str
