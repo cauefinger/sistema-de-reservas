@@ -30,5 +30,4 @@ def logar(db: Session, dados: LoginSchema):
     if not usuario or not password_hash.verify(dados.senha, usuario.senha):
         raise HTTPException(status_code=401, detail="Senha ou usuário inválidos")
 
-    else:
-        return #retornar token
+    return #retornar token
