@@ -24,6 +24,5 @@ class UsuarioResponseSchemas(BaseModel): # parâmetro que a API deve devolver ao
 
 class LoginSchema(BaseModel):
 
-    nome: str
     email: str
     senha: str
