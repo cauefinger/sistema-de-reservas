@@ -22,9 +22,13 @@ def cadastrar (db: Session, dados: UsuarioPostSchemas):
     db.refresh(novo_usuario)
     return novo_usuario
 
+
 def logar(db: Session, dados: LoginSchema):
 
-    usuario = Usuario.email == dados.email
+    usuario = db.query(Usuario).filter(Usuario.email == dados.email).first()
 
     if not usuario or not password_hash.verify(dados.senha, usuario.senha):
         raise HTTPException(status_code=401, detail="Senha ou usuário inválidos")
+
+    else:
+        return #retornar token
