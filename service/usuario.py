@@ -6,7 +6,12 @@ from pwdlib import PasswordHash
 
 password_hash = PasswordHash.recommended()
 
+#TODO: Esse arquivo deve ter o sufixo _service, já que se trata de um service
+#TODO: seguir o padrão de nomes de CRUD find_by_id, find_all, create, update, delete (perguntar pra IA)
+#TODO: service não deve fazer conexão com banco de dados, apenas transformar dados. classes service não devem "conhecer" a classe db.
+# As classes que fazem essa busca no banco de dados se chamam repository.
 
+#TODO: aqui deve chamar create
 def cadastrar (db: Session, dados: UsuarioPostSchemas):
 
     novo_usuario = db.query(Usuario).filter(Usuario.email == dados.email).first()

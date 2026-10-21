@@ -9,8 +9,15 @@ from model.enums import Status
 def listar_locacao(db: Session):
     return db.query(Locacao).all()
 
+#TODO: Esse arquivo deve ter o sufixo _service, já que se trata de um service. locacao_service.py, para distinguir do locacao.py (model)
 
+#TODO: ajustar espaçamento, pesquisar por PEP8
+#TODO: seguir o padrão de nomes de CRUD find_by_id, find_all, create, update, delete (perguntar pra IA)
 
+#TODO: service não deve fazer conexão com banco de dados, apenas transformar dados. classes service não devem "conhecer" a classe db.
+# As classes que fazem essa busca no banco de dados se chamam *_repository.py.
+
+#TODO: aqui deve chamar create
 def adicionar_locacao(db: Session, dados: LocacaoCreateSchemas):
 
     if dados.data_inicio >= dados.data_final:
