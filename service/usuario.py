@@ -1,5 +1,5 @@
 from model.user import Usuario
-from schemas.usuario import UsuarioPostSchemas
+from schemas.usuario import UsuarioPostSchemas, LoginSchema
 from sqlalchemy.orm import Session
 from fastapi import HTTPException
 from pwdlib import PasswordHash
@@ -21,3 +21,10 @@ def cadastrar (db: Session, dados: UsuarioPostSchemas):
     db.commit()
     db.refresh(novo_usuario)
     return novo_usuario
+
+def logar(db: Session, dados: LoginSchema):
+
+    usuario = Usuario.email == dados.email
+
+    if not usuario or not password_hash.verify(dados.senha, usuario.senha):
+        raise HTTPException(status_code=401, detail="Senha ou usuário inválidos")
