@@ -1,7 +1,7 @@
 from fastapi import FastAPI
-from controller.autenticacao import autenticacao
-from controller.locacao import locacao
-from controller.recurso import recurso
+from controller.autenticacao_controller import autenticacao
+from controller.locacao_controller import locacao
+from controller.recurso_controller import recurso
 from database.database import engine, Base
 from model.locacao import Locacao
 from model.user import Usuario

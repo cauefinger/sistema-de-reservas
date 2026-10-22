@@ -14,11 +14,11 @@ async def mensagem_rota():
     return {"mensagem": "Você entrou na rota de autenticação"}
 
 
-@autenticacao.post("/", response_model=UsuarioResponseSchemas, status_code=201)
+@autenticacao.post("/create", response_model=UsuarioResponseSchemas, status_code=201)
 def cadastrar_usuario(dados: UsuarioPostSchemas, db: Session = Depends(get_db)):
     return cadastrar(db, dados)
 
 
 @autenticacao.post("/login", status_code=200)
-def logar_usuario(dados: LoginSchema, db: Session = Depends(get_db)):
-    return
+def login(dados: LoginSchema, db: Session = Depends(get_db)):
+    return  
