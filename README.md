@@ -23,6 +23,6 @@ GET DE CONTROLLER LOCACAO E GET DE CONTROLLER RECURSO FEITO, PROXIMO PASSO FAZER
 [ ] Em um melhor momento, adicionar token e refresh token, depois de executar testes com usuário e hash.
 [ ] Melhorar status da locação
 [OK] Criar a rota de login com token jwt (deixar refresh token para depois)
-[ ] Testar login/logar com o jwt
+[OK] Testar login/logar com o jwt
 [ ] Fazer refresh token
 [ ] Pedir token para acessar as rotas
