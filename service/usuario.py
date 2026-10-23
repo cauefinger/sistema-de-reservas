@@ -33,6 +33,6 @@ def logar(db: Session, dados: LoginSchema):
 
     token = gerar_token({"sub": str(usuario.id)}) # "sub" é do JWT, pega o sujeito em questão da str usuario.id
     return {
-        "access token": token,
+        "access_token": token,
         "token_type": "bearer"
 }
