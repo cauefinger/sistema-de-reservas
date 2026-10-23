@@ -21,4 +21,4 @@ def cadastrar_usuario(dados: UsuarioPostSchemas, db: Session = Depends(get_db)):
 
 @autenticacao.post("/login", status_code=200)
 def login(dados: LoginSchema, db: Session = Depends(get_db)):
-    return  
+    return logar

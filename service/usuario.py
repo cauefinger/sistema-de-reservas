@@ -3,6 +3,7 @@ from schemas.usuario import UsuarioPostSchemas, LoginSchema
 from sqlalchemy.orm import Session
 from fastapi import HTTPException
 from pwdlib import PasswordHash
+from security import gerar_token
 
 password_hash = PasswordHash.recommended()
 
@@ -30,4 +31,4 @@ def logar(db: Session, dados: LoginSchema):
     if not usuario or not password_hash.verify(dados.senha, usuario.senha):
         raise HTTPException(status_code=401, detail="Senha ou usuário inválidos")
 
-    return #retornar token
+    return gerar_token
