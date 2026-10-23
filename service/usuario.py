@@ -31,4 +31,8 @@ def logar(db: Session, dados: LoginSchema):
     if not usuario or not password_hash.verify(dados.senha, usuario.senha):
         raise HTTPException(status_code=401, detail="Senha ou usuário inválidos")
 
-    return gerar_token
+    token = gerar_token({"sub": str(usuario.id)}) # "sub" é do JWT, pega o sujeito em questão da str usuario.id
+    return {
+        "acess token": token,
+        "token_type": "bearer"
+}
