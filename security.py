@@ -18,5 +18,5 @@ def gerar_token(dados: dict) -> str:
 
 def gerar_refresh_token(dados: dict) -> str:
     payload = dados.copy()
-    payload["EXP"] = datetime.now(timezone.utc) + timedelta(days=EXPIRACAO_DIAS)
-    return jwt.decode(payload, SECRET_KEY, algorithms=ALGORITHM)
+    payload["exp"] = datetime.now(timezone.utc) + timedelta(days=EXPIRACAO_DIAS)
+    return jwt.encode(payload, SECRET_KEY, algorithm=ALGORITHM)

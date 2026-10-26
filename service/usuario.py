@@ -3,7 +3,9 @@ from schemas.usuario import UsuarioPostSchemas, LoginSchema
 from sqlalchemy.orm import Session
 from fastapi import HTTPException
 from pwdlib import PasswordHash
-from security import gerar_token, gerar_refresh_token
+from security import gerar_token, gerar_refresh_token, SECRET_KEY, ALGORITHM
+from schemas.refresh_schema import RefreshRequest
+import jwt
 
 password_hash = PasswordHash.recommended()
 
@@ -38,3 +40,14 @@ def logar(db: Session, dados: LoginSchema):
         "token_type": "bearer"
 
 }
+
+def renovar_token(dados: RefreshRequest):
+    try:
+        payload = jwt.decode(dados.refresh_token, SECRET_KEY, algorithms=[ALGORITHM])
+    except jwt.InvalidTokenError:
+        raise HTTPException(status_code=401, detail="Refresh token inválido ou expirado")
+
+    return {
+        "access_token": gerar_token({"sub": payload["sub"]}),
+        "token_type": "bearer"
+    }
