@@ -3,7 +3,7 @@ from schemas.usuario import UsuarioPostSchemas, LoginSchema
 from sqlalchemy.orm import Session
 from fastapi import HTTPException
 from pwdlib import PasswordHash
-from security import gerar_token
+from security import gerar_token, gerar_refresh_token
 
 password_hash = PasswordHash.recommended()
 
@@ -34,5 +34,7 @@ def logar(db: Session, dados: LoginSchema):
     token = gerar_token({"sub": str(usuario.id)}) # "sub" é do JWT, pega o sujeito em questão da str usuario.id
     return {
         "access_token": token,
+        "refresh_token": gerar_refresh_token({"sub": str(usuario.id)}),
         "token_type": "bearer"
+
 }
