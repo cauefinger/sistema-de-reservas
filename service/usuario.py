@@ -22,7 +22,7 @@ def cadastrar (db: Session, dados: UsuarioPostSchemas):
     db.commit()
     db.refresh(novo_usuario)
     return novo_usuario
-
+ 
 
 def logar(db: Session, dados: LoginSchema):
 
